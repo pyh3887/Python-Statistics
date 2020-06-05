@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>커피 전문점 선호도 설문 결과</h3>
+{% if crossTab %}
+	{{crossTab|safe}}
+
+{% endif %}
+<br>
+{% if results %}
+	{{results}}
+
+{% endif %}
+<br>
+<br>
+{% if df %}
+	{{df|safe}}
+
+{% endif %}
+<br>
+<img alt="" src="../static/images/vbar.png">
+</body>
+</html>
