@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt 
 
 df = pd.DataFrame({'id1':(1,2,3,4,5),'id2':(2,3,-1,7,9)})
-print(df)
+print(df) 
 #plt.scatter(df.id1,df.id2)
 #plt.show()
 

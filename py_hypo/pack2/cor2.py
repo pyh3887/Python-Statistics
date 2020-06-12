@@ -95,7 +95,7 @@ def Gogo():
     all_table =pd.merge(china_table, japan_table ,left_index=True , right_index = True)
     all_table =pd.merge(all_table, usa_table ,left_index=True , right_index = True)
     print(all_table.head(3))
-    
+     
     r_list = [] # 각 관광지(5군데) 마다 상관계수를 구해 기억
     for tourpoint in resNm[:5]:
         #print(tourpoint)            

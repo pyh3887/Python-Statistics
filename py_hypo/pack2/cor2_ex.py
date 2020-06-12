@@ -32,7 +32,7 @@ print(np.cov(data.tv,data.radio),'\n') #numpy는 np.cov(변수1,변수2)
 print(np.cov(data.newspaper,data.radio),'\n')
 print(data.cov(),'\n')
 print()
-
+ 
 #상관계수 출력
 print(np.corrcoef(data.tv,data.radio),'\n')
 print(np.corrcoef(data.tv,data.newspaper),'\n')
