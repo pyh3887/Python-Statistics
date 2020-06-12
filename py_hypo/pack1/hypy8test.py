@@ -104,3 +104,5 @@ print(stats.ttest_ind(sco1,sco2,equal_var = False)) # 등분산성을 만족하�
 
 
 
+
+

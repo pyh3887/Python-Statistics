@@ -3,9 +3,8 @@ import numpy as np
 import scipy as sp
 import scipy.stats as stats
 import random
-import MySQLdb
 import pandas as pd
-
+import MySQLdb
 config = {
     'host':'127.0.0.1',
     'user':'root',
