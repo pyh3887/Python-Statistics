@@ -29,6 +29,7 @@ def SurveyProcess(request):
     plt.xlabel('커피사')
     plt.ylabel('선호건수')
     plt.title('커피사별  선호건수')
+    
 
     
     fig.savefig('django_coffee_chi/coffeeSurvey/static/images/vbar.png')
