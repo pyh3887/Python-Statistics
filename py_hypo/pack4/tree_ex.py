@@ -30,6 +30,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 import pandas as pd 
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 df = pd.read_csv('../testdata/patient.csv')
@@ -61,23 +62,35 @@ print('분류 정확도 : ', accuracy_score(test_y, pred))
 
 print('특성 중요도 :\n{}'.format(model.feature_importances_))
 
-print('---------------------------------------')
 
-# 데이터 읽어오기
-pt_data = pd.read_csv('../testdata/patient.csv')
-print(pt_data.head())
+# 특성 중요도 시각화
+def plot_feature_importances(model):
+    n_features = x.shape[1]
+    # 바차트(horizon)
+    plt.barh(range(n_features), model.feature_importances_, align='center')
+    plt.yticks(np.arange(n_features), x.columns)
+    plt.xlabel("attr importances")
+    plt.ylabel("attr")
+    plt.ylim(-1, n_features)
+    plt.show()
+    plt.close()
+    
+plot_feature_importances(model)
+
+print('\n----------------------------------------------------------\n')
+wine_data = pd.read_csv("../testdata/winequality-red.csv")
+# print(wine_data.head(3))
 
 # 결측치 제거
-# print(pt_data.isnull().any()) # 결측치 하나도 없음
+# print(wine_data.isnull().any()) # 결측치 하나도 없음
 
 # 독립변수 / 종속변수 설정
 #- 독립변수 ID를 제외한 나머지
-x = pt_data.iloc[:, 2:]
+x = wine_data.iloc[:, 0:-1]
 # print(x)
 
 #- 종속변수 
-y = pt_data['STA']
-
+y = wine_data['quality']
 
 # 데이터 분할 ( train / test )
 train_x, test_x, train_y, test_y = train_test_split(x,y)
@@ -95,10 +108,9 @@ print('실제값 : ', np.array(test_y[:5]))
 # 분류 정확도
 from sklearn.metrics import accuracy_score
 print('분류 정확도 : ', accuracy_score(test_y, pred))
-
 print('특성 중요도 :\n{}'.format(model.feature_importances_))
 
-
+plot_feature_importances(model)
 
 
 
